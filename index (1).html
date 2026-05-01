@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaddazXD Store — Digital Products</title>
+<meta name="description" content="Toko produk digital terpercaya. Auto delivery setelah pembayaran terverifikasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+/* ===================== RESET & BASE ===================== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#f5f4f0;
+  --bg2:#edecea;
+  --surface:#ffffff;
+  --ink:#0e0e0e;
+  --ink2:#555;
+  --ink3:#999;
+  --accent:#1a1a1a;
+  --dana:#118EEA;
+  --dana-light:#e8f4fd;
+  --green:#16a34a;
+  --green-light:#dcfce7;
+  --red:#dc2626;
+  --border:#e2e1de;
+  --border2:#d0cfc9;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
+  --shadow-lg:0 8px 32px rgba(0,0,0,.12);
+  --r:14px;
+  --r-sm:8px;
+}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===================== TYPOGRAPHY ===================== */
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px;line-height:.95}
+h2{font-size:28px;font-weight:800;letter-spacing:-0.5px}
+h3{font-size:18px;font-weight:700}
+
+/* ===================== LAYOUT ===================== */
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap-sm{max-width:680px;margin:0 auto;padding:0 24px}
+
+/* ===================== NAV ===================== */
+nav{
+  position:sticky;top:0;z-index:90;
+  background:rgba(245,244,240,.9);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;
+}
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;letter-spacing:1px;
+}
+.logo em{color:var(--dana);font-style:normal}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-tag{
+  font-size:12px;font-weight:600;
+  background:var(--ink);color:#fff;
+  padding:5px 12px;border-radius:99px;
+  letter-spacing:.3px;
+}
+.nav-tag.live{background:var(--green)}
+.nav-links{display:flex;gap:20px}
+.nav-links a{
+  font-size:14px;font-weight:500;
+  color:var(--ink2);text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--ink)}
+
+/* ===================== HERO ===================== */
+.hero{
+  padding:72px 0 60px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+}
+.hero-left{}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ink2);
+  margin-bottom:20px;
+}
+.hero-kicker::before{
+  content:'';display:block;width:20px;height:2px;
+  background:var(--ink);
+}
+.hero-title{
+  font-size:clamp(52px,7vw,88px);
+  margin-bottom:20px;
+  color:var(--ink);
+}
+.hero-sub{
+  font-size:16px;color:var(--ink2);
+  line-height:1.7;margin-bottom:32px;
+  max-width:400px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:var(--r-sm);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;font-weight:700;
+  cursor:pointer;border:none;
+  transition:all .2s;text-decoration:none;
+}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#333;transform:translateY(-1px)}
+.btn-outline{
+  background:transparent;color:var(--ink);
+  border:1.5px solid var(--border2);
+}
+.btn-outline:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn-dana{background:var(--dana);color:#fff}
+.btn-dana:hover{background:#0a7dd1;transform:translateY(-1px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:#15803d}
+.btn-lg{padding:16px 32px;font-size:16px;border-radius:var(--r)}
+
+/* HERO RIGHT — stats card */
+.hero-right{}
+.stats-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+.stats-card-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:20px;
+}
+.stats-card-title{font-size:13px;font-weight:600;color:var(--ink2)}
+.live-dot{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;color:var(--green);
+}
+.live-dot::before{
+  content:'';width:7px;height:7px;
+  background:var(--green);border-radius:50%;
+  animation:blink 1.4s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat-box{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:12px;padding:16px;
+}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:1;color:var(--ink)}
+.stat-lbl{font-size:12px;color:var(--ink3);margin-top:4px;font-weight:500}
+
+.recent-orders{margin-top:20px}
+.recent-title{font-size:12px;font-weight:600;color:var(--ink3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+.order-item{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+}
+.order-item:last-child{border:none}
+.order-avatar{
+  width:32px;height:32px;border-radius:8px;
+  background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.order-info{flex:1;min-width:0}
+.order-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.order-time{font-size:11px;color:var(--ink3)}
+.order-status{
+  font-size:11px;font-weight:700;
+  background:var(--green-light);color:var(--green);
+  padding:3px 8px;border-radius:99px;flex-shrink:0;
+}
+
+/* ===================== SECURITY STRIP ===================== */
+.security-strip{
+  background:var(--ink);color:#fff;
+  padding:14px 0;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+.sec-strip-inner{
+  display:flex;align-items:center;justify-content:center;
+  gap:32px;flex-wrap:wrap;
+}
+.sec-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
+.sec-item .ico{font-size:16px}
+
+/* ===================== PRODUCTS ===================== */
+.products-section{padding:72px 0}
+.section-label{
+  display:flex;align-items:center;gap:12px;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ink2);
+  margin-bottom:16px;
+}
+.section-label::after{
+  content:'';flex:1;height:1px;background:var(--border2);
+}
+.section-header{margin-bottom:40px}
+.section-header h2{margin-bottom:8px}
+.section-header p{color:var(--ink2);font-size:15px}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+}
+
+.product-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  transition:all .25s;
+  position:relative;cursor:pointer;
+}
+.product-card:hover{
+  border-color:var(--ink);
+  box-shadow:var(--shadow-lg);
+  transform:translateY(-3px);
+}
+
+.card-ribbon{
+  position:absolute;top:16px;left:16px;z-index:2;
+  font-size:11px;font-weight:700;letter-spacing:.5px;
+  padding:4px 10px;border-radius:99px;
+  text-transform:uppercase;
+}
+.ribbon-hot{background:#fef2f2;color:var(--red);border:1px solid #fecaca}
+.ribbon-new{background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe}
+.ribbon-best{background:#fefce8;color:#ca8a04;border:1px solid #fde68a}
+
+.card-thumb{
+  height:180px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.card-thumb .thumb-icon{font-size:52px;position:relative;z-index:1}
+.thumb-pattern{
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.03) 10px,rgba(0,0,0,.03) 11px);
+}
+/* Thumb color variants */
+.t1{background:#f0f4ff}
+.t2{background:#f0fff4}
+.t3{background:#fff7ed}
+.t4{background:#fdf4ff}
+.t5{background:#f0fdfa}
+.t6{background:#fff1f2}
+
+.card-body{padding:20px}
+.card-category{
+  font-size:11px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;color:var(--ink3);
+  margin-bottom:8px;
+}
+.card-title{font-size:17px;font-weight:800;margin-bottom:6px;letter-spacing:-.3px}
+.card-desc{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:14px}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tag{
+  font-size:11px;font-weight:600;
+  background:var(--bg);border:1px solid var(--border);
+  padding:3px 8px;border-radius:6px;color:var(--ink2);
+}
+.card-footer{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding-top:14px;
+  border-top:1px solid var(--border);
+}
+.price-block{}
+.price-was{font-size:12px;color:var(--ink3);text-decoration:line-through}
+.price-now{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--ink);line-height:1}
+.price-note{font-size:11px;color:var(--ink3)}
+.card-buy-btn{
+  background:var(--ink);color:#fff;
+  border:none;padding:10px 18px;
+  border-radius:var(--r-sm);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;font-weight:700;
+  cursor:pointer;transition:all .2s;
+}
+.card-buy-btn:hover{background:#333}
+.stars{font-size:12px;color:#f59e0b}
+
+/* ===================== HOW IT WORKS ===================== */
+.how-section{
+  background:var(--ink);
+  padding:72px 0;
+  color:#fff;
+}
+.how-section .section-label{color:rgba(255,255,255,.4)}
+.how-section .section-label::after{background:rgba(255,255,255,.15)}
+.how-section h2{color:#fff;margin-bottom:8px}
+.how-section .section-header p{color:rgba(255,255,255,.5)}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin-top:48px;
+  position:relative;
+}
+.steps::before{
+  content:'';position:absolute;
+  top:32px;left:calc(12.5% + 16px);
+  right:calc(12.5% + 16px);
+  height:1px;background:rgba(255,255,255,.1);
+  z-index:0;
+}
+.step{text-align:center;padding:0 16px;position:relative;z-index:1}
+.step-num{
+  width:64px;height:64px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:24px;
+  margin:0 auto 20px;
+  background:var(--ink);
+}
+.step-num.dana-step{
+  border-color:var(--dana);
+  color:var(--dana);
+}
+.step-title{font-size:14px;font-weight:700;margin-bottom:8px}
+.step-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5}
+
+/* ===================== DANA SECTION ===================== */
+.dana-section{padding:72px 0}
+.dana-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  box-shadow:var(--shadow);
+}
+.dana-left{
+  padding:40px;
+  background:linear-gradient(135deg,#0077CC,#118EEA,#29ABE2);
+  color:#fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.dana-logo{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;margin-bottom:8px}
+.dana-tagline{font-size:14px;opacity:.8;margin-bottom:24px}
+.dana-features{display:flex;flex-direction:column;gap:10px}
+.dana-feat{display:flex;align-items:center;gap:10px;font-size:14px}
+.dana-feat .ico{font-size:16px}
+.dana-qr-area{
+  text-align:center;margin-top:28px;
+}
+.qr-box{
+  width:160px;height:160px;
+  background:#fff;border-radius:16px;
+  margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+/* Simulated QR pattern */
+.qr-box svg{width:130px;height:130px}
+.qr-name{font-size:13px;font-weight:700;opacity:.9}
+.qr-sub{font-size:11px;opacity:.6;margin-top:2px}
+
+.dana-right{padding:40px}
+.dana-right h3{font-size:22px;font-weight:800;margin-bottom:8px;letter-spacing:-.3px}
+.dana-right p{color:var(--ink2);font-size:14px;margin-bottom:24px;line-height:1.6}
+.security-list{display:flex;flex-direction:column;gap:12px}
+.sec-point{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.sec-point-ico{
+  width:36px;height:36px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.sec-point-text strong{font-size:13px;font-weight:700;display:block;margin-bottom:2px}
+.sec-point-text span{font-size:12px;color:var(--ink2)}
+
+/* ===================== TESTIMONIALS ===================== */
+.testi-section{padding:72px 0;background:var(--bg2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.testi-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;padding:20px;
+}
+.testi-stars{font-size:13px;color:#f59e0b;margin-bottom:10px}
+.testi-text{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:14px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.testi-name{font-size:13px;font-weight:700}
+.testi-handle{font-size:11px;color:var(--ink3)}
+
+/* ===================== FAQ ===================== */
+.faq-section{padding:72px 0}
+.faq-list{margin-top:40px;display:flex;flex-direction:column;gap:8px}
+.faq-item{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+}
+.faq-q{
+  padding:18px 20px;
+  font-size:15px;font-weight:700;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;
+}
+.faq-q .arrow{
+  font-size:12px;color:var(--ink3);
+  transition:transform .2s;flex-shrink:0;
+}
+.faq-item.open .arrow{transform:rotate(180deg)}
+.faq-a{
+  display:none;
+  padding:0 20px 18px;
+  font-size:14px;color:var(--ink2);line-height:1.6;
+}
+.faq-item.open .faq-a{display:block}
+
+/* ===================== FOOTER ===================== */
+footer{
+  background:var(--ink);color:#fff;
+  padding:40px 0 28px;
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-bottom:20px;
+}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px}
+.footer-logo em{color:var(--dana);font-style:normal}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:.2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-dana-badge{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;color:rgba(255,255,255,.4);
+}
+.footer-dana-badge .ico{color:var(--dana)}
+
+/* ===================== MODAL ===================== */
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:200;
+  backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal-overlay.active{display:flex}
+.modal{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  width:100%;max-width:440px;
+  position:relative;
+  overflow:hidden;
+  animation:mIn .28s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes mIn{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:none}}
+
+.modal-header{
+  padding:20px 24px 0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.modal-title-sm{font-size:13px;font-weight:700;color:var(--ink2)}
+.modal-close{
+  width:32px;height:32px;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--ink2);
+  transition:.2s;
+}
+.modal-close:hover{background:var(--bg2)}
+.modal-body{padding:20px 24px 24px}
+
+/* Step 1 — product summary */
+.modal-product-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 16px;
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:20px;
+}
+.modal-product-icon{
+  width:44px;height:44px;
+  border-radius:10px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.modal-product-name{font-size:14px;font-weight:700;flex:1}
+.modal-product-price{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--ink)}
+
+/* QR Payment view */
+.payment-view{display:none}
+.payment-view.active{display:block}
+.qr-instruction{
+  text-align:center;margin-bottom:16px;
+}
+.qr-instruction h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.qr-instruction p{font-size:13px;color:var(--ink2)}
+
+.qr-payment-box{
+  background:linear-gradient(135deg,#e8f4fd,#f0f8ff);
+  border:2px dashed var(--dana);
+  border-radius:16px;
+  padding:24px;
+  text-align:center;
+  margin-bottom:16px;
+}
+.qr-payment-box .qr-wrap{
+  width:180px;height:180px;
+  background:#fff;border-radius:12px;
+  margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(17,142,234,.15);
+}
+.qr-payment-box .amount-label{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;color:var(--dana);
+  margin-bottom:2px;
+}
+.qr-payment-box .to-name{font-size:13px;font-weight:700;color:var(--ink2)}
+.qr-payment-box .dana-handle{font-size:12px;color:var(--ink3)}
+
+.timer-box{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:10px;padding:10px 14px;
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;font-size:13px;
+}
+.timer-val{
+  font-family:'Bebas Neue',sans-serif;font-size:22px;
+  color:var(--red);letter-spacing:1px;
+}
+
+.verify-note{
+  background:#eff6ff;border:1px solid #bfdbfe;
+  border-radius:10px;padding:12px 14px;
+  font-size:12px;color:#1d4ed8;
+  line-height:1.5;margin-bottom:16px;
+}
+.verify-note strong{display:block;margin-bottom:2px}
+
+.verify-btn{
+  width:100%;
+  background:var(--dana);color:#fff;
+  border:none;padding:15px;border-radius:12px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:15px;font-weight:700;
+  cursor:pointer;transition:.2s;
+}
+.verify-btn:hover{background:#0a7dd1}
+.verify-btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Verifying state */
+.verifying-view{display:none;text-align:center;padding:20px 0}
+.verifying-view.active{display:block}
+.spinner{
+  width:48px;height:48px;
+  border:3px solid var(--border);
+  border-top-color:var(--dana);
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+  margin:0 auto 16px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.verifying-title{font-size:16px;font-weight:800;margin-bottom:6px}
+.verifying-sub{font-size:13px;color:var(--ink2);line-height:1.5}
+.verify-steps{
+  text-align:left;margin-top:20px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.vstep{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;
+}
+.vstep .vdot{
+  width:20px;height:20px;border-radius:50%;
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;flex-shrink:0;
+  transition:all .3s;
+}
+.vstep.done .vdot{background:var(--green);border-color:var(--green);color:#fff}
+.vstep.active .vdot{border-color:var(--dana);color:var(--dana)}
+.vstep-text{color:var(--ink2)}
+.vstep.done .vstep-text{color:var(--green);font-weight:600}
+
+/* Success state */
+.success-view{display:none;text-align:center;padding:16px 0}
+.success-view.active{display:block}
+.success-ring{
+  width:72px;height:72px;
+  border-radius:50%;
+  background:var(--green-light);
+  border:2px solid var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;
+  margin:0 auto 16px;
+}
+.success-title{font-size:20px;font-weight:800;color:var(--green);margin-bottom:6px}
+.success-sub{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:20px}
+.delivery-box{
+  background:var(--green-light);
+  border:1px solid #bbf7d0;
+  border-radius:12px;padding:14px;
+  font-size:13px;color:var(--green);
+  font-weight:600;margin-bottom:20px;
+}
+.tx-id{
+  font-size:11px;color:var(--ink3);
+  font-family:monospace;margin-bottom:16px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:48px 0 40px}
+  .hero-right{display:none}
+  .steps{grid-template-columns:1fr 1fr;gap:24px}
+  .steps::before{display:none}
+  .dana-card{grid-template-columns:1fr}
+  .dana-left{padding:28px}
+  .dana-right{padding:28px}
+  .testi-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .footer-links{display:none}
+}
+@media(max-width:540px){
+  .steps{grid-template-columns:1fr}
+  .sec-strip-inner{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo">Maddaz<em>XD</em>_STORE</div>
+    <div class="nav-links">
+      <a href="#products">Produk</a>
+      <a href="#howto">Cara Beli</a>
+      <a href="#payment">Pembayaran</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <span class="nav-tag live">● OPEN</span>
+      <span class="nav-tag">Auto Delivery</span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-kicker">Toko Digital Terpercaya</div>
+      <div class="hero-title display">PRODUK<br>DIGITAL<br>PREMIUM</div>
+      <p class="hero-sub">
+        Dapatkan produk digital berkualitas tinggi. Pembayaran via DANA, file terkirim otomatis setelah transaksi terverifikasi sistem — tanpa tunggu admin.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-dark btn-lg">🛍️ Lihat Produk</a>
+        <a href="#howto" class="btn btn-outline btn-lg">Cara Kerja →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stats-card">
+        <div class="stats-card-header">
+          <span class="stats-card-title">Dashboard Toko</span>
+          <span class="live-dot">Live</span>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-num">847</div>
+            <div class="stat-lbl">Total Terjual</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">4.9</div>
+            <div class="stat-lbl">⭐ Rating</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-lbl">Auto Delivery</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">&lt;5m</div>
+            <div class="stat-lbl">Verif. Time</div>
+          </div>
+        </div>
+        <div class="recent-orders">
+          <div class="recent-title">Pembelian Terakhir</div>
+          <div class="order-item">
+            <div class="order-avatar">🎨</div>
+            <div class="order-info">
+              <div class="order-name">Template Pack — Reza A.</div>
+              <div class="order-time">2 menit lalu</div>
+            </div>
+            <div class="order-status">✓ Terkirim</div>
+          </div>
+          <div class="order-item">
+            <div class="order-avatar">📊</div>
+            <div class="order-info">
+              <div class="order-name">Pitch Deck — Siti N.</div>
+              <div class="order-time">11 menit lalu</div>
+            </div>
+            <div class="order-status">✓ Terkirim</div>
+          </div>
+          <div class="order-item">
+            <div class="order-avatar">💼</div>
+            <div class="order-info">
+              <div class="order-name">Business Bundle — Farhan</div>
+              <div class="order-time">28 menit lalu</div>
+            </div>
+            <div class="order-status">✓ Terkirim</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECURITY STRIP -->
+<div class="security-strip">
+  <div class="wrap sec-strip-inner">
+    <div class="sec-item"><span class="ico">🔒</span> Pembayaran Terenkripsi SSL</div>
+    <div class="sec-item"><span class="ico">🤖</span> Auto Verifikasi DANA</div>
+    <div class="sec-item"><span class="ico">📦</span> File Dikirim Jika Lunas</div>
+    <div class="sec-item"><span class="ico">🔗</span> Link Unik Per Pembeli</div>
+    <div class="sec-item"><span class="ico">📋</span> Bukti Transaksi Tersimpan</div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products-section" id="products">
+  <div class="wrap">
+    <div class="section-header">
+      <div class="section-label">Katalog</div>
+      <h2>Produk Digital</h2>
+      <p>Semua produk langsung bisa digunakan setelah download. Garansi ori.</p>
+    </div>
+    <div class="product-grid">
+
+      <div class="product-card" onclick="openModal('Instagram Content Pack','25000','🎨','Template feed, story & highlight IG estetik siap pakai.')">
+        <div class="card-ribbon ribbon-hot">🔥 Terlaris</div>
+        <div class="card-thumb t1">
+          <div class="thumb-pattern"></div>
+          <div class="thumb-icon">🎨</div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Social Media</div>
+          <div class="card-title">Instagram Content Pack</div>
+          <div class="card-desc">30 template feed, story & highlight. Estetik, profesional, siap edit.</div>
+          <div class="card-tags">
+            <span class="tag">30 template</span>
+            <span class="tag">Editable</span>
+            <span class="tag">IG Ready</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-was">Rp 75.000</div>
+              <div class="price-now">Rp 25.000</div>
+              <div class="stars">★★★★★ (128)</div>
+            </div>
+            <button class="card-buy-btn">Beli →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openModal('Business Pitch Deck','35000','📊','20 slide presentasi profesional untuk proposal & investor.')">
+        <div class="card-ribbon ribbon-new">✨ Baru</div>
+        <div class="card-thumb t2">
+          <div class="thumb-pattern"></div>
+          <div class="thumb-icon">📊</div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Presentasi</div>
+          <div class="card-title">Business Pitch Deck</div>
+          <div class="card-desc">20 slide presentasi profesional. Cocok untuk proposal bisnis & investor.</div>
+          <div class="card-tags">
+            <span class="tag">20 slide</span>
+            <span class="tag">Profesional</span>
+            <span class="tag">Multi-use</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-was">Rp 90.000</div>
+              <div class="price-now">Rp 35.000</div>
+              <div class="stars">★★★★★ (64)</div>
+            </div>
+            <button class="card-buy-btn">Beli →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openModal('UMKM Promo Bundle','45000','🛒','50 template konten promosi produk all-in-one untuk UMKM.')">
+        <div class="card-ribbon ribbon-best">👑 Best Value</div>
+        <div class="card-thumb t3">
+          <div class="thumb-pattern"></div>
+          <div class="thumb-icon">🛒</div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">UMKM & Bisnis</div>
+          <div class="card-title">UMKM Promo Bundle</div>
+          <div class="card-desc">50 template konten promosi produk. Feed, story, flyer, highlights — all-in-one.</div>
+          <div class="card-tags">
+            <span class="tag">50 template</span>
+            <span class="tag">All-in-one</span>
+            <span class="tag">UMKM</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-was">Rp 120.000</div>
+              <div class="price-now">Rp 45.000</div>
+              <div class="stars">★★★★★ (203)</div>
+            </div>
+            <button class="card-buy-btn">Beli →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openModal('Portfolio Minimal Kit','20000','🖼️','15 template portfolio bersih & elegan untuk freelancer.')">
+        <div class="card-thumb t4">
+          <div class="thumb-pattern"></div>
+          <div class="thumb-icon">🖼️</div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Portfolio</div>
+          <div class="card-title">Portfolio Minimal Kit</div>
+          <div class="card-desc">15 template portfolio bersih & elegan. Cocok untuk freelancer & desainer.</div>
+          <div class="card-tags">
+            <span class="tag">15 template</span>
+            <span class="tag">Minimal</span>
+            <span class="tag">Freelancer</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-was">Rp 55.000</div>
+              <div class="price-now">Rp 20.000</div>
+              <div class="stars">★★★★☆ (47)</div>
+            </div>
+            <button class="card-buy-btn">Beli →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openModal('Undangan & Event Pack','30000','💍','25 template undangan digital & promosi event premium.')">
+        <div class="card-ribbon ribbon-hot">🔥 Hits</div>
+        <div class="card-thumb t5">
+          <div class="thumb-pattern"></div>
+          <div class="thumb-icon">💍</div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Event & Undangan</div>
+          <div class="card-title">Undangan & Event Pack</div>
+          <div class="card-desc">25 template undangan digital premium. Pernikahan, ultah, seminar, gathering.</div>
+          <div class="card-tags">
+            <span class="tag">25 template</span>
+            <span class="tag">Premium</span>
+            <span class="tag">Undangan</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-was">Rp 80.000</div>
+              <div class="price-now">Rp 30.000</div>
+              <div class="stars">★★★★★ (91)</div>
+            </div>
+            <button class="card-buy-btn">Beli →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openModal('LinkedIn Personal Brand','28000','💼','18 template konten LinkedIn profesional untuk personal branding.')">
+        <div class="card-ribbon ribbon-new">✨ Baru</div>
+        <div class="card-thumb t6">
+          <div class="thumb-pattern"></div>
+          <div class="thumb-icon">💼</div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Personal Brand</div>
+          <div class="card-title">LinkedIn Personal Brand</div>
+          <div class="card-desc">18 template konten LinkedIn profesional. Tingkatkan personal branding-mu!</div>
+          <div class="card-tags">
+            <span class="tag">18 template</span>
+            <span class="tag">LinkedIn</span>
+            <span class="tag">Profesional</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-block">
+              <div class="price-was">Rp 70.000</div>
+              <div class="price-now">Rp 28.000</div>
+              <div class="stars">★★★★★ (55)</div>
+            </div>
+            <button class="card-buy-btn">Beli →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-section" id="howto">
+  <div class="wrap">
+    <div class="section-header">
+      <div class="section-label">Cara Beli</div>
+      <h2>Mudah, Aman & Otomatis</h2>
+      <p>Proses dari pilih produk sampai file diterima — semuanya otomatis.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Pilih Produk</div>
+        <div class="step-desc">Browse katalog dan klik "Beli" pada produk yang kamu inginkan.</div>
+      </div>
+      <div class="step">
+        <div class="step-num dana-step">02</div>
+        <div class="step-title">Scan QR DANA</div>
+        <div class="step-desc">Scan QR code DANA Bisnis yang muncul. Bayar sesuai nominal yang tertera.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Verifikasi Otomatis</div>
+        <div class="step-desc">Sistem mendeteksi pembayaran masuk via webhook DANA. Proses 1–3 menit.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">File Dikirim</div>
+        <div class="step-desc">Setelah status LUNAS, link produk otomatis dikirim. Tidak perlu hubungi admin!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DANA PAYMENT SECTION -->
+<div class="dana-section" id="payment">
+  <div class="wrap">
+    <div class="dana-card">
+      <div class="dana-left">
+        <div>
+          <div class="dana-logo">DANA BISNIS</div>
+          <div class="dana-tagline">Metode Pembayaran Resmi</div>
+          <div class="dana-features">
+            <div class="dana-feat"><span class="ico">✅</span> Terverifikasi DANA for Business</div>
+            <div class="dana-feat"><span class="ico">⚡</span> Notifikasi real-time via webhook</div>
+            <div class="dana-feat"><span class="ico">🔒</span> Transaksi tersimpan otomatis</div>
+            <div class="dana-feat"><span class="ico">📱</span> Bayar dari semua e-wallet DANA</div>
+          </div>
+        </div>
+        <div class="dana-qr-area">
+          <div class="qr-box">
+            <!-- Simulated QR pattern (ganti dengan QR DANA asli kamu) -->
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <rect width="130" height="130" fill="white"/>
+              <!-- QR corners -->
+              <rect x="8" y="8" width="38" height="38" rx="4" fill="none" stroke="#118EEA" stroke-width="3"/>
+              <rect x="13" y="13" width="28" height="28" rx="2" fill="#118EEA"/>
+              <rect x="84" y="8" width="38" height="38" rx="4" fill="none" stroke="#118EEA" stroke-width="3"/>
+              <rect x="89" y="13" width="28" height="28" rx="2" fill="#118EEA"/>
+              <rect x="8" y="84" width="38" height="38" rx="4" fill="none" stroke="#118EEA" stroke-width="3"/>
+              <rect x="13" y="89" width="28" height="28" rx="2" fill="#118EEA"/>
+              <!-- QR data dots -->
+              <rect x="55" y="8" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="8" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="8" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="16" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="16" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="8" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="8" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="16" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="16" y="71" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="79" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="79" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="71" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="79" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="84" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="84" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="92" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="100" y="71" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="108" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="116" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="79" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="79" y="100" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="108" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="108" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="84" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="92" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="100" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="108" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="116" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="108" y="100" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="116" y="108" width="6" height="6" rx="1" fill="#118EEA"/>
+              <!-- Center logo area -->
+              <rect x="52" y="52" width="26" height="26" rx="4" fill="white" stroke="#118EEA" stroke-width="1.5"/>
+              <text x="65" y="68" font-family="Arial" font-size="11" font-weight="bold" fill="#118EEA" text-anchor="middle">D</text>
+            </svg>
+          </div>
+          <div class="qr-name">MaddazXD_STORE</div>
+          <div class="qr-sub">Scan dengan aplikasi DANA</div>
+        </div>
+      </div>
+      <div class="dana-right">
+        <h3>Mengapa Pembayaran Aman?</h3>
+        <p>Sistem kami menggunakan webhook resmi DANA untuk memverifikasi setiap transaksi secara real-time. Tidak ada celah manipulasi.</p>
+        <div class="security-list">
+          <div class="sec-point">
+            <div class="sec-point-ico">🤖</div>
+            <div class="sec-point-text">
+              <strong>Verifikasi Otomatis via Webhook</strong>
+              <span>Setiap pembayaran masuk langsung dideteksi server. File hanya unlock jika status = PAID dari DANA.</span>
+            </div>
+          </div>
+          <div class="sec-point">
+            <div class="sec-point-ico">🔐</div>
+            <div class="sec-point-text">
+              <strong>Token Unik Per Transaksi</strong>
+              <span>Setiap order mendapat token unik. Link produk hanya bisa diakses 1x oleh pembeli yang sah.</span>
+            </div>
+          </div>
+          <div class="sec-point">
+            <div class="sec-point-ico">📋</div>
+            <div class="sec-point-text">
+              <strong>Log Transaksi Tersimpan</strong>
+              <span>Semua transaksi dicatat lengkap: waktu bayar, jumlah, status, dan produk yang dibeli.</span>
+            </div>
+          </div>
+          <div class="sec-point">
+            <div class="sec-point-ico">⏱️</div>
+            <div class="sec-point-text">
+              <strong>QR Kedaluwarsa Otomatis</strong>
+              <span>QR payment berlaku 10 menit. Jika tidak dibayar, transaksi dibatalkan otomatis oleh sistem.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section">
+  <div class="wrap">
+    <div class="section-header">
+      <div class="section-label">Review</div>
+      <h2>Kata Pembeli</h2>
+      <p>Ribuan pembeli sudah puas. Ini pengalaman mereka.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Langsung dapat link setelah bayar, tidak sampai 2 menit. Keren banget sistem auto deliverynya. Template juga kualitasnya bagus!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">😊</div>
+          <div>
+            <div class="testi-name">Reza Aditya</div>
+            <div class="testi-handle">Content Creator · Jakarta</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Awalnya ragu beli produk digital, tapi sistemnya beneran aman. Bukti bayar DANA langsung diverifikasi, file langsung masuk WA."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🙂</div>
+          <div>
+            <div class="testi-name">Siti Nurhaliza</div>
+            <div class="testi-handle">UMKM Owner · Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Bundle UMKM-nya worth it banget. Udah pake buat promosi produk semua, engagement naik drastis. Recommended 100%!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">😄</div>
+          <div>
+            <div class="testi-name">Farhan Maulana</div>
+            <div class="testi-handle">Pengusaha · Surabaya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section" id="faq">
+  <div class="wrap-sm">
+    <div class="section-header">
+      <div class="section-label">FAQ</div>
+      <h2>Pertanyaan Umum</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana cara mendapatkan produk setelah bayar?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">Setelah kamu bayar via QR DANA, sistem kami otomatis mendeteksi pembayaran masuk dalam 1–3 menit. Link produk akan langsung dikirim ke WhatsApp atau email yang kamu masukkan saat checkout. Tidak perlu hubungi admin!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Apakah aman bayar via DANA di sini?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">Sangat aman. Kami menggunakan akun DANA Bisnis resmi yang terverifikasi. Setiap transaksi tercatat otomatis dan ada bukti pembayaran dari DANA yang bisa kamu simpan. Tidak ada risiko penipuan karena sistem fully automated.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana jika sudah bayar tapi link belum dikirim?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">Tunggu maksimal 5 menit. Jika belum ada, kirim bukti pembayaran DANA ke WhatsApp kami. Kami akan proses manual dalam 10 menit. Garansi 100% uang kembali jika terjadi masalah dari pihak kami.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Apakah produk bisa dipakai untuk kebutuhan komersial?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">Ya, semua produk sudah termasuk lisensi personal & komersial. Kamu bebas menggunakannya untuk keperluan bisnis, konten sosial media, presentasi klien, dan lainnya.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Berapa lama link produk bisa diakses?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">Link produk berlaku selamanya (lifetime access). Kamu bisa akses kapan saja. Kami sarankan untuk langsung download dan simpan ke Google Drive atau perangkat kamu setelah menerima link.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Bisa refund jika tidak puas?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">Karena produk digital tidak bisa "dikembalikan", kami tidak menyediakan refund setelah file diterima. Namun jika ada masalah teknis (link mati, file rusak, dll), kami akan ganti atau perbaiki tanpa biaya tambahan.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">Maddaz<em>XD</em>_STORE</div>
+      <div class="footer-links">
+        <a href="#products">Produk</a>
+        <a href="#howto">Cara Beli</a>
+        <a href="#payment">Pembayaran</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 MaddazXD Store · Toko Produk Digital Terpercaya</div>
+      <div class="footer-dana-badge"><span class="ico">💙</span> Pembayaran via DANA Bisnis</div>
+    </div>
+  </div>
+</footer>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title-sm" id="modal-step-label">Checkout</span>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- STEP 1: Product + QR -->
+      <div class="payment-view active" id="view-payment">
+        <div class="modal-product-card">
+          <div class="modal-product-icon" id="modal-icon">🎨</div>
+          <div class="modal-product-name" id="modal-name">Nama Produk</div>
+          <div class="modal-product-price" id="modal-price">Rp 0</div>
+        </div>
+
+        <div class="qr-instruction">
+          <h3>Scan QR DANA untuk Bayar</h3>
+          <p>Buka aplikasi DANA → Scan QR → Bayar sesuai nominal</p>
+        </div>
+
+        <div class="qr-payment-box">
+          <div class="qr-wrap">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" width="150" height="150">
+              <rect width="130" height="130" fill="white"/>
+              <rect x="8" y="8" width="38" height="38" rx="4" fill="none" stroke="#118EEA" stroke-width="3"/>
+              <rect x="13" y="13" width="28" height="28" rx="2" fill="#118EEA"/>
+              <rect x="84" y="8" width="38" height="38" rx="4" fill="none" stroke="#118EEA" stroke-width="3"/>
+              <rect x="89" y="13" width="28" height="28" rx="2" fill="#118EEA"/>
+              <rect x="8" y="84" width="38" height="38" rx="4" fill="none" stroke="#118EEA" stroke-width="3"/>
+              <rect x="13" y="89" width="28" height="28" rx="2" fill="#118EEA"/>
+              <rect x="55" y="8" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="8" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="16" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="8" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="16" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="63" y="71" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="84" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="92" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="108" y="55" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="116" y="63" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="71" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="84" y="84" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="100" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="116" y="92" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="55" y="108" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="108" y="100" width="6" height="6" rx="1" fill="#118EEA"/>
+              <rect x="52" y="52" width="26" height="26" rx="4" fill="white" stroke="#118EEA" stroke-width="1.5"/>
+              <text x="65" y="68" font-family="Arial" font-size="14" font-weight="bold" fill="#118EEA" text-anchor="middle">D</text>
+            </svg>
+          </div>
+          <div class="amount-label" id="modal-amount-label">Rp 25.000</div>
+          <div class="to-name">MaddazXD_STORE</div>
+          <div class="dana-handle">DANA Bisnis Terverifikasi</div>
+        </div>
+
+        <div class="timer-box">
+          <span style="font-size:13px;color:var(--ink2)">⏱️ QR kedaluwarsa dalam</span>
+          <span class="timer-val" id="timer">10:00</span>
+        </div>
+
+        <div class="verify-note">
+          <strong>🔒 Cara kerja sistem keamanan:</strong>
+          Setelah kamu bayar, sistem otomatis menerima notifikasi dari DANA. File hanya dikirim jika pembayaran benar-benar masuk dan terverifikasi. Klik "Sudah Bayar" setelah transfer selesai.
+        </div>
+
+        <button class="verify-btn" id="verify-btn" onclick="startVerifying()">
+          ✅ Sudah Bayar — Verifikasi Sekarang
+        </button>
+      </div>
+
+      <!-- STEP 2: Verifying -->
+      <div class="verifying-view" id="view-verifying">
+        <div class="spinner"></div>
+        <div class="verifying-title">Memverifikasi Pembayaran...</div>
+        <div class="verifying-sub">Sistem sedang mengecek status pembayaran DANA kamu. Mohon tunggu sebentar.</div>
+        <div class="verify-steps">
+          <div class="vstep" id="vs1">
+            <div class="vdot">1</div>
+            <div class="vstep-text">Menghubungi server DANA...</div>
+          </div>
+          <div class="vstep" id="vs2">
+            <div class="vdot">2</div>
+            <div class="vstep-text">Memverifikasi status transaksi...</div>
+          </div>
+          <div class="vstep" id="vs3">
+            <div class="vdot">3</div>
+            <div class="vstep-text">Mengonfirmasi nominal pembayaran...</div>
+          </div>
+          <div class="vstep" id="vs4">
+            <div class="vdot">4</div>
+            <div class="vstep-text">Membuka akses produk...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Success -->
+      <div class="success-view" id="view-success">
+        <div class="success-ring">✅</div>
+        <div class="success-title">Pembayaran Lunas!</div>
+        <div class="success-sub">Pembayaran telah terverifikasi sistem. Produk kamu sudah siap dikirim ke WhatsApp / email yang terdaftar.</div>
+        <div class="delivery-box">
+          📦 Link produk sedang dikirim otomatis ke kontak kamu. Cek WhatsApp / email dalam 1–2 menit.
+        </div>
+        <div class="tx-id" id="tx-id">TX ID: MXD-00000</div>
+        <button class="btn btn-green" style="width:100%;justify-content:center" onclick="closeModal()">Selesai 🎉</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== STATE ===== */
+let timerInterval = null;
+let timerSeconds = 600;
+let verifyTimeout = null;
+
+/* ===== MODAL ===== */
+function openModal(name, amount, icon, desc) {
+  document.getElementById('modal-name').textContent = name;
+  document.getElementById('modal-price').textContent = 'Rp ' + parseInt(amount).toLocaleString('id-ID');
+  document.getElementById('modal-amount-label').textContent = 'Rp ' + parseInt(amount).toLocaleString('id-ID');
+  document.getElementById('modal-icon').textContent = icon;
+
+  showView('payment');
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  startTimer();
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+  clearInterval(timerInterval);
+  clearTimeout(verifyTimeout);
+  timerSeconds = 600;
+  resetVerifySteps();
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal')) closeModal();
+}
+
+/* ===== VIEWS ===== */
+function showView(name) {
+  ['payment','verifying','success'].forEach(v => {
+    document.getElementById('view-' + v).classList.remove('active');
+  });
+  document.getElementById('view-' + name).classList.add('active');
+
+  const labels = {payment:'Checkout',verifying:'Memverifikasi...',success:'Pembayaran Berhasil'};
+  document.getElementById('modal-step-label').textContent = labels[name];
+}
+
+/* ===== TIMER ===== */
+function startTimer() {
+  timerSeconds = 600;
+  updateTimerDisplay();
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timerSeconds--;
+    updateTimerDisplay();
+    if (timerSeconds <= 0) {
+      clearInterval(timerInterval);
+      document.getElementById('timer').textContent = 'EXPIRED';
+      document.getElementById('verify-btn').disabled = true;
+      document.getElementById('verify-btn').textContent = 'QR Kedaluwarsa — Tutup & Coba Lagi';
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timerSeconds / 60).toString().padStart(2,'0');
+  const s = (timerSeconds % 60).toString().padStart(2,'0');
+  document.getElementById('timer').textContent = m + ':' + s;
+}
+
+/* ===== VERIFY FLOW ===== */
+function startVerifying() {
+  clearInterval(timerInterval);
+  showView('verifying');
+  resetVerifySteps();
+
+  const steps = ['vs1','vs2','vs3','vs4'];
+  steps.forEach((id, i) => {
+    setTimeout(() => {
+      if (i > 0) document.getElementById(steps[i-1]).classList.remove('active');
+      document.getElementById(id).classList.add('active');
+      setTimeout(() => {
+        document.getElementById(id).classList.remove('active');
+        document.getElementById(id).classList.add('done');
+        document.getElementById(id).querySelector('.vdot').textContent = '✓';
+        if (i === steps.length - 1) {
+          setTimeout(showSuccess, 500);
+        }
+      }, 800);
+    }, i * 1000);
+  });
+}
+
+function resetVerifySteps() {
+  ['vs1','vs2','vs3','vs4'].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('active','done');
+    el.querySelector('.vdot').textContent = id.replace('vs','');
+  });
+  const btn = document.getElementById('verify-btn');
+  btn.disabled = false;
+  btn.textContent = '✅ Sudah Bayar — Verifikasi Sekarang';
+}
+
+function showSuccess() {
+  const txId = 'MXD-' + Date.now().toString().slice(-8);
+  document.getElementById('tx-id').textContent = 'TX ID: ' + txId;
+  showView('success');
+}
+
+/* ===== FAQ ===== */
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ===== ESC KEY ===== */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>
